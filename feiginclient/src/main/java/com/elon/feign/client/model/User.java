@@ -1,7 +1,6 @@
 package com.elon.feign.client.model;
 
 import lombok.Data;
-
 import java.io.Serializable;
 
 @Data

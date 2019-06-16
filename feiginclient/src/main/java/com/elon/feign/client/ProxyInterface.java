@@ -4,7 +4,6 @@ import com.elon.feign.client.model.User;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
-import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * 客户端代理接口
@@ -24,4 +23,7 @@ public interface ProxyInterface {
     @Headers("content-type: application/json")
     @RequestLine("PUT /v1/feign-server/user")
     boolean addUser(User user);
+
+    @RequestLine("DELETE /v1/feign-server/user/{userId}")
+    boolean deleteUser(@Param("userId") int userId);
 }
