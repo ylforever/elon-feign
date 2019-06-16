@@ -75,4 +75,15 @@ public class FeignServerController {
         System.out.println("user:" + user);
         return true;
     }
+
+    /**
+     * 删除用户。
+     * @param userId 用户ID
+     * @return 处理结果
+     */
+    @DeleteMapping("/user/{userId}")
+    public boolean deleteUser(@PathVariable("userId") int userId) {
+        System.out.println("Delete user. userId:" + userId);
+        return true;
+    }
 }
