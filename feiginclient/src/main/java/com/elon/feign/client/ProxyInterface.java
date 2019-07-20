@@ -8,6 +8,7 @@ import feign.RequestLine;
 /**
  * 客户端代理接口
  */
+@Headers({"content-type: application/json", "accept: application/json"})
 public interface ProxyInterface {
 
     @RequestLine("GET /v1/feign-server/user/{id}")
@@ -20,7 +21,6 @@ public interface ProxyInterface {
     @RequestLine("POST /v1/feign-server/user/update-user/{id}")
     User updateUserInfo(@Param("name") String name, @Param("age") int age, @Param("id") int id);
 
-    @Headers("content-type: application/json")
     @RequestLine("PUT /v1/feign-server/user")
     boolean addUser(User user);
 
